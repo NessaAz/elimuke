@@ -31,10 +31,16 @@ router.put('/:id/approve', authMiddleware, async (req, res) => {
   }
 });
 
-// Get Approved Courses
+// Get Courses
 router.get('/', async (req, res) => {
   try {
-    const courses = await Course.find({ status: 'Approved' });
+    const { status } = req.query;
+    let courses;
+    if (status) {
+      courses = await Course.find({ status });
+    } else {
+      courses = await Course.find();
+    }
     res.json(courses);
   } catch (error) {
     res.status(500).json({ error: error.message });

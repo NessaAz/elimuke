@@ -1,4 +1,4 @@
-/* StudentDashboard.css */
+/* ApproverDashboard.css */
 :root {
   --black: #121212;
   --dark-gray: #1E1E1E;
@@ -15,43 +15,16 @@ body {
   line-height: 1.6;
 }
 
-.dashboard-container {
+.approver-dashboard-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
 }
 
-.dashboard-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.dashboard-header h2 {
-  margin: 0;
-  color: var(--black);
-}
-
-.logout-button {
-  background-color: var(--black);
-  color: var(--white);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.logout-button:hover {
-  background-color: var(--dark-gray);
-}
-
-.dashboard-main {
+.approver-dashboard-wrapper {
   width: 100%;
   max-width: 600px;
   background-color: var(--white);
@@ -61,7 +34,13 @@ body {
   box-sizing: border-box;
 }
 
-.dashboard-main h3 {
+.approver-dashboard-wrapper h2 {
+  text-align: center;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+.approver-dashboard-wrapper h3 {
   text-align: center;
   color: var(--black);
   margin-bottom: 20px;
@@ -73,10 +52,29 @@ body {
 }
 
 .course-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px;
   border-bottom: 1px solid var(--light-gray);
 }
 
-.course-item:last-child {
-  border-bottom: none;
+.course-item span {
+  color: var(--black);
+  font-size: 16px;
+}
+
+.approve-button {
+  background-color: var(--black);
+  color: var(--white);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.approve-button:hover {
+  background-color: var(--dark-gray);
 }

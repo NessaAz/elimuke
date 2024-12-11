@@ -9,7 +9,7 @@ const StudentDashboard = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/courses');
+        const res = await axios.get('http://localhost:5000/api/courses?status=Approved');
         setCourses(res.data);
       } catch (error) {
         console.error(error);

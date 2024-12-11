@@ -1,6 +1,7 @@
 // src/components/ApproverDashboard.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './ApproverDashboard.css';
 
 const ApproverDashboard = () => {
   const [courses, setCourses] = useState([]);
@@ -32,17 +33,21 @@ const ApproverDashboard = () => {
   };
 
   return (
-    <div>
-      <h2>Approver Dashboard</h2>
-      <h3>Courses Pending Approval</h3>
-      <ul>
-        {courses.filter(course => course.status === 'Pending').map((course) => (
-          <li key={course._id}>
-            {course.title}
-            <button onClick={() => approveCourse(course._id)}>Approve</button>
-          </li>
-        ))}
-      </ul>
+    <div className="approver-dashboard-container">
+      <div className="approver-dashboard-wrapper">
+        <h2>Approver Dashboard</h2>
+        <h3>Courses Pending Approval</h3>
+        <ul className="course-list">
+          {courses.filter(course => course.status === 'Pending').map((course) => (
+            <li key={course._id} className="course-item">
+              <span>{course.title}</span>
+              <button onClick={() => approveCourse(course._id)} className="approve-button">
+                Approve
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

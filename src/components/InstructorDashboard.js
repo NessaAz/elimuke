@@ -1,6 +1,7 @@
 // src/components/InstructorDashboard.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import './InstructorDashboard.css';
 
 const InstructorDashboard = () => {
   const [formData, setFormData] = useState({
@@ -27,13 +28,38 @@ const InstructorDashboard = () => {
   };
 
   return (
-    <div>
-      <h2>Instructor Dashboard</h2>
-      <form onSubmit={onSubmit}>
-        <input type="text" name="title" value={title} onChange={onChange} placeholder="Course Title" />
-        <textarea name="description" value={description} onChange={onChange} placeholder="Course Description"></textarea>
-        <button type="submit">Create Course</button>
-      </form>
+    <div className="instructor-dashboard-container">
+      <div className="instructor-dashboard-wrapper">
+        <h2>Instructor Dashboard</h2>
+        <form onSubmit={onSubmit} className="course-form">
+          <div className="form-group">
+            <label htmlFor="title">Course Title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              value={title}
+              onChange={onChange}
+              placeholder="Course Title"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="description">Course Description</label>
+            <textarea
+              id="description"
+              name="description"
+              value={description}
+              onChange={onChange}
+              placeholder="Course Description"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" className="create-course-button">
+            Create Course
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
