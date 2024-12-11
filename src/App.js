@@ -8,6 +8,9 @@ import Testimonials from './components/Testimonials';
 import Register from './components/Register';
 import Login from './components/Login';
 import Contact from './components/Contact';
+import StudentDashboard from './components/StudentDashboard';
+import InstructorDashboard from './components/InstructorDashboard';
+import ApproverDashboard from './components/ApproverDashboard';
 
 const App = () => {
   return (
@@ -20,6 +23,11 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/contact" element={<Contact />} />
+
+        <Route path="/student-dashboard" element={<StudentDashboard />} />
+        <Route path="/instructor-dashboard" element={<InstructorDashboard />} />
+        <Route path="/approver-dashboard" element={<ApproverDashboard />} />
+    
       </Routes>
     </Router>
   );

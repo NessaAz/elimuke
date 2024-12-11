@@ -1,3 +1,4 @@
+// backend/routes/courses.js
 const express = require('express');
 const Course = require('../models/Course');
 const router = express.Router();
